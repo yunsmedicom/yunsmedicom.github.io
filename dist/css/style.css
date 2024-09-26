@@ -1,0 +1,483 @@
+* {
+    box-sizing: border-box;
+}
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; /* 初始透明背景 */
+    height: 9rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.header.scrolled {
+    background-color: #555E50;
+    box-shadow: 10px 12px 24px 6px  rgba(0,0,0,.08);
+    transition: background-color 0.5s ease-in-out;
+}
+.container {
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+.header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    text-indent: -9999px; /* 將文字隱藏 */
+    background-image: url(/dist/image/img-logo.png); /* 設定背景圖片 */
+    background-size: contain; /* 圖片大小自動調整 */
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 236px; /* 調整 logo 寬度 */
+    height: 65px; /* 調整 logo 高度 */
+  }
+.hamburger-menu {
+    display: none; /* 預設隱藏漢堡選單 */
+  }
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
+}
+.overlay-nav {
+    display: none; /* 預設隱藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #BAC1B6; 
+    z-index: 1; /* 確保這個色塊在其他元素之上 */
+}
+.main-nav li a {
+    color: #BAC1B6;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: #FFF;
+}
+
+.banner {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#banner{
+    position: absolute; /* 或 absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 或 contain */
+    z-index: -1;
+}
+.banner .quote {
+    margin-top: 60px;
+}
+.banner .quote-m {
+   display: none;
+}
+.banner .quote p{
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: #E2E0C5;
+}
+.banner .quote p:first-child{
+    animation: showup 7s ease-in 1 forwards;
+}
+.banner .quote p:last-child{
+    width:0px;
+    animation: reveal 7s ease-in 1 forwards;
+}
+.banner .quote p:last-child span{
+    margin-left:-300px;
+    animation: slidein 7s ease-in 1 forwards;
+}
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:1;}
+}
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:300px;}
+    80% {opacity:1;}
+    100% {opacity:1;width:300px;}
+}
+section {
+    padding: 10rem 0rem;
+}
+
+#about {
+    background: #F2F2F2;
+}
+
+#clinet {
+    background: #F2F2F2;
+}
+
+#about p {
+    color: #555E50;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.title h2 {
+    color: #555E50;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.135rem;
+    margin-bottom: -2.25rem;
+    z-index: 1;
+}
+.title span {
+    color: #E5E8E3;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.service-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.service-wrap {
+    display: flex;
+    padding: 2.25rem;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 33%;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background: #FFF;
+    box-shadow: 0px 20px 50px 0px rgba(28, 9, 80, 0.15);
+    padding: 2.5rem;
+    flex-grow: 1;
+}
+
+.service-item img {
+    width: 128px;
+    height: 128px;
+}
+
+.service-item h3 {
+    color: #555E50;
+    text-align: center;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+}
+
+.service-item p {
+    color: #879380;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0%;
+}
+
+.clinet-logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 2.25rem;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+.clinet-logo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 0.5rem;
+    border: 1px solid #CCC;
+}
+
+.contact-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.contact-wrap img {
+    width: 400px;
+    height: 240px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 20%;
+}
+
+.contact-item p {
+    color: #555E50;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.contact-email {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.contact-email::before{
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(/dist/image/img-email.png) no-repeat;
+    background-size: cover;
+}
+
+.contact-email a {
+    color: #BAC1B6;
+    text-decoration: none;
+}
+
+.footer {
+    display: flex;
+    padding: 1.5rem 0rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid #879380;
+}
+
+.footer P {
+    color: #879380;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* 中螢幕以下 */
+@media (max-width: 1280px) {
+    header {
+        justify-content: space-between; /* 兩端對齊 */
+    }
+    .logo {
+        transform: scale(0.84);
+    }
+    .header .container {
+        padding: 0 2rem;
+    }
+
+    .container {
+        padding: 2rem;
+        width: 100%;
+    }
+    .contact-item {
+        padding-right: 0;
+    }
+    .contact-wrap {
+        justify-content: center;
+    }
+    .service-wrap {
+        padding: 1rem;
+    }
+
+}
+
+    /* 小螢幕 */
+@media (max-width: 768px) {
+    .main-nav {
+      display: none;
+    }
+    .hamburger-menu {
+      display: block;
+    }
+    .main-nav.active{
+        height: 100vh;
+        top: 0;
+        background: #fff;
+        padding: 2rem;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+    }
+    /* 漢堡選單樣式 */
+    .hamburger-menu span {
+      display: block;
+      width: 32px;
+      height: 2px;
+      margin: 6px;
+      border-radius:3px;
+      background: #BAC1B6;
+      position: relative;
+      transition: transform .5s cubic-bezier(.77,.2,.05,1), opacity .55s ease, -webkit-transform .5s cubic-bezier(.77,.2,.05,1);
+    }
+    .main-nav.active li a{
+        color: #555E50;
+    }
+    .hamburger-menu.times span:first-child {
+        margin: 6px;
+        transform: rotate(-45deg) translate(-5px, 6px);
+        transform-origin: 50% 50%;
+    }
+    .hamburger-menu.times span:nth-child(2) {
+        margin: 6px;
+        transform: rotate(45deg);
+    }
+    .hamburger-menu.times span:nth-child(3) {
+        margin: 6px;
+        transform: rotate(45deg)  translate(0, -2px);
+        opacity: 0;
+    }
+    .logo {
+       transform: scale(0.74);
+    }
+    .overlay-nav {
+       display: none;
+    }
+    .header {
+       height: 90px;
+    }
+    .contact-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .service-content {
+        flex-direction: column;
+    }
+  }
+
+  @media (max-width: 468px) {
+    .service-content {
+        flex-direction: column;
+    }
+    .clinet-logo {
+        gap: 1.1rem;
+    }
+    .clinet-logo img {
+        width: 120px;
+        height: 120px;
+    }
+    .contact-wrap img {
+        width: 90%;
+        height: auto;
+    }
+    .contact-wrap {
+        width: 100%;
+    }
+    .banner .quote {
+       display: none;
+    }
+    .banner .quote-m {
+       display: block;
+    }
+    .banner .quote-m p{
+        white-space:nowrap;
+        font-weight: 200;
+        font-size: 1.5rem;
+        color: #E2E0C5;
+    }
+    .banner .quote-m p:first-child{
+        animation: showupm 7s ease-in 1 forwards;
+    }
+    .banner .quote-m p:last-child{
+        width:0px;
+        animation: revealm 7s ease-in 1 forwards;
+    }
+    .banner .quote-m p:last-child span{
+        margin-left:-300px;
+        animation: slideinm 7s ease-in 1 forwards;
+    }
+    @keyframes showupm {
+        0% {opacity:0;}
+        20% {opacity:1;}
+        80% {opacity:1;}
+        100% {opacity:1;}
+    }
+    @keyframes slideinm {
+        0% { margin-left:-800px; }
+        20% { margin-left:-800px; }
+        35% { margin-left:0px; }
+        100% { margin-left:0px; }
+    }
+    @keyframes revealm {
+        0% {opacity:0;width:0px;}
+        20% {opacity:1;width:0px;}
+        30% {width:300px;}
+        80% {opacity:1;}
+        100% {opacity:1;width:300px;}
+    }
+  }

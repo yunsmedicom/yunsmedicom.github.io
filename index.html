@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yun</title>
+    <link rel="stylesheet" href="/dist/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="index.html">
+                <h1 class="logo">Yuns Medicom</h1>
+            </a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#clinet">Client</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="banner">
+            <video autoplay muted loop id="banner">
+                <source src="/dist/image/clouds.mp4" type="video/mp4">
+              </video>
+            <div class="quote">
+                <p>The Power</p>
+                <p><span>of Genuine Communication</span></p>
+            </div>
+            <div class="quote-m">
+                <p>The Power</p>
+                <p><span>of Genuine Communication</span></p>
+            </div>
+        </div>
+        <section id="about">
+            <div class="container">
+                <div class="title" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500">
+                    <h2>ABOOUT US</h2>
+                    <span>ABOUT US</span>
+                </div>
+                <p>
+                    Yuns medicom LTD established in 2022,we are a leading provider of specialized medical editing and academic information integration services. Our comprehensive offerings include meticulous medical editing, high-quality medical materials production, and smooth management of medical event.
+                    With a highly skilled team of medical editors and graphic designers, we are dedicated to delivering exceptional results that meet the highest industry standards. Our esteemed clients, including global pharmaceutical leaders. We aim to provide precise, reliable, and impactful solutions tailored to client's unique needs.   
+                </p>
+            </div>
+        </section>
+            
+        <section id="service">
+            <div class="container">
+                <div class="title" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500">
+                   <h2>SERVICE</h2>
+                   <span>SERVICE</span>
+               </div>
+               <div class="service-content">
+                   <div class="service-wrap" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="service-item">
+                            <img src="/dist/image/ic-medical.png">
+                            <h3>Medical Writing</h3>
+                            <p>Involves communicating complex medical information in a clear and understandable way.</p>
+                        </div>
+                   </div>
+                   <div class="service-wrap" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="service-item">
+                            <img src="/dist/image/ic-event.png">
+                            <h3>Event Management</h3>
+                            <p>Event management is the process of achieving specific objectives through planned events.</p>
+                        </div>
+                    </div>
+                    <div class="service-wrap" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="service-item">
+                            <img src="/dist/image/ic-digital.png">
+                            <h3>Digital Solution</h3>
+                            <p>A digital solution is an innovative use of technology to improve efficiency and productivity.</p>
+                        </div>
+                    </div>
+               </div>
+           </div>
+        </section>
+
+        <section id="clinet">
+            <div class="container">
+                <div class="title" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500">
+                    <h2>CLIENT</h2>
+                    <span>CLIENT</span>
+                </div>
+                <div class="clinet-logo" data-aos="fade-up"
+                data-aos-duration="3000">
+                    <img src="/dist/image/logo01.png">
+                    <img src="/dist/image/logo02.png">
+                    <img src="/dist/image/logo03.png">
+                    <img src="/dist/image/logo04.png">
+                    <img src="/dist/image/logo05.png">
+                    <img src="/dist/image/logo06.png">
+                    <img src="/dist/image/logo07.png">
+                    <img src="/dist/image/logo08.png">
+                    <img src="/dist/image/logo09.png">
+                    <img src="/dist/image/logo10.png">
+                    <img src="/dist/image/logo11.png">
+                    <img src="/dist/image/logo12.png">
+                    <img src="/dist/image/logo13.png">
+                    <img src="/dist/image/logo14.png">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="title" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500">
+                    <h2>CONTACT</h2>
+                    <span>CONTACT</span>
+                </div>
+                <div class="contact-wrap">
+                    <img src="/dist/image/img-contact.png">
+                    <div class="contact-item">
+                        <p>To initiate a consultation regarding our services, please contact us by email:</p>
+                        <div class="contact-email">
+                            <a href="mailto:yunsharemedi@gmail.com">yunsharemedi@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="footer">
+        <p>Copyright © 2024 Yuns Medicom All rights reserved.</p>
+    </div>
+    <script>
+        //AOS animation plugin
+        AOS.init();
+
+        //menu
+        $(document).ready(function(){
+            $(".hamburger-menu").click(function(){
+                $(this).toggleClass("times");
+                $(".main-nav").toggleClass("active");
+            });
+        });
+
+        //header scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            const scrollY = window.scrollY;
+
+            // 調整這個值來控制觸發變色的捲動距離
+            const scrollThreshold = 100;
+
+            if (scrollY > scrollThreshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        //nav clicked scrool
+        $(document).ready(function() {
+        // 選取所有的導航連結
+        $('.main-nav a').click(function(event) {
+            event.preventDefault(); // 阻止預設的連結行為
+
+            // 取得目標區塊的 ID
+            var targetId = $(this).attr('href');
+
+            // 滾動到目標區塊
+            $('html, body').animate({
+                scrollTop: $(targetId).offset().top
+            }, 500);
+
+            //關閉menu
+            $(".main-nav").toggleClass("active");
+            $(".hamburger-menu").toggleClass("times");
+        });
+    });
+    </script>
+</body>
+</html>
