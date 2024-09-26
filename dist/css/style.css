@@ -20,7 +20,7 @@ body {
     z-index: 2;
 }
 .header.scrolled {
-    background-color: #555E50;
+    background-color: #A4B29B;
     box-shadow: 10px 12px 24px 6px  rgba(0,0,0,.08);
     transition: background-color 0.5s ease-in-out;
 }
@@ -45,6 +45,9 @@ body {
     width: 236px; /* 調整 logo 寬度 */
     height: 65px; /* 調整 logo 高度 */
   }
+.header.scrolled .logo{
+    background-image: url(/dist/image/img-logo-scrolled.png); 
+}
 .hamburger-menu {
     display: none; /* 預設隱藏漢堡選單 */
   }
@@ -71,6 +74,7 @@ body {
     color: #BAC1B6;
     text-decoration: none;
 }
+.header.scrolled .main-nav li a{ color: #FDFFFC;}
 
 nav li a:hover {
     color: #FFF;
@@ -106,7 +110,7 @@ nav li a:hover {
     white-space:nowrap;
     font-weight: 200;
     font-size: 1.5rem;
-    color: #E2E0C5;
+    color: #b5b4a9;
 }
 .banner .quote p:first-child{
     animation: showup 7s ease-in 1 forwards;
