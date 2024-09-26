@@ -89,7 +89,7 @@ nav li a:hover {
     align-items: center;
     position: relative;
 }
-#banner{
+#banner-video{
     position: absolute; /* 或 absolute */
     top: 0;
     left: 0;
@@ -388,15 +388,18 @@ section {
       position: relative;
       transition: transform .5s cubic-bezier(.77,.2,.05,1), opacity .55s ease, -webkit-transform .5s cubic-bezier(.77,.2,.05,1);
     }
+    .header.scrolled .hamburger-menu span{background: #FDFFFC;}
     .main-nav.active li a{
-        color: #555E50;
+        color: #555E50 !important;
     }
     .hamburger-menu.times span:first-child {
+        background: #555E50 !important;
         margin: 6px;
         transform: rotate(-45deg) translate(-5px, 6px);
         transform-origin: 50% 50%;
     }
     .hamburger-menu.times span:nth-child(2) {
+        background: #555E50 !important;
         margin: 6px;
         transform: rotate(45deg);
     }
@@ -441,6 +444,11 @@ section {
     }
     .contact-wrap {
         width: 100%;
+    }
+    #banner-video{display: none;}
+    .banner {
+        background: url(/dist/image/banner.png) center no-repeat;
+        background-size: cover;
     }
     .banner .quote {
        display: none;
