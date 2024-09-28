@@ -288,12 +288,15 @@ section {
     color: #555E50;
 }
 
-.contact-email {
+.contact-info {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
     flex-direction: row;
     gap: 0.5rem;
+}
+.contact-email a {
+    color: #BAC1B6;
+    text-decoration: none;
 }
 .contact-email::before{
     content: '';
@@ -303,11 +306,20 @@ section {
     background: url(/dist/image/img-email.png) no-repeat;
     background-size: cover;
 }
-
-.contact-email a {
+.contact-address p{
     color: #BAC1B6;
-    text-decoration: none;
+    flex: 1;
+    margin: 0;
 }
+.contact-address::before{
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(/dist/image/img-address.png) no-repeat;
+    background-size: cover;
+}
+
 
 .footer {
     display: flex;
