@@ -209,6 +209,11 @@
                 //關閉menu
                 $(".main-nav").toggleClass("active");
                 $(".hamburger-menu").toggleClass("times");
+                if ($('body').css('overflow') === 'auto') {
+                    $('body').css('overflow', 'hidden');
+                } else {
+                    $('body').css('overflow', 'auto');
+                }
             });
 
             //點擊logo滾動回最上方
