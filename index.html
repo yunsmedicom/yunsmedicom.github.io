@@ -8,6 +8,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- 瀏覽器提前加載 -->
+    <link rel="preload" as="image" href="/dist/image/banner.png">
+    <link rel="preload" as="mp4" href="/dist/image/clouds.mp4">
+    <link rel="preload" as="image" href="/dist/image/img-logo.png">
+    <link rel="preload" as="image" href="/dist/image/img-logo-scrolled.png">
 </head>
 <body>
     <div class="header">
@@ -171,7 +176,7 @@
 
         //nav clicked scrool
         $(document).ready(function() {
-            
+
             $('body').css('overflow', 'auto');
 
             //menu
