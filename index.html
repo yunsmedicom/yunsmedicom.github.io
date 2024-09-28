@@ -12,7 +12,7 @@
 <body>
     <div class="header">
         <div class="container">
-            <a href="index.html">
+            <a href="#">
                 <h1 class="logo">Yuns Medicom</h1>
             </a>
             <nav>
@@ -154,14 +154,6 @@
         //AOS animation plugin
         AOS.init();
 
-        //menu
-        $(document).ready(function(){
-            $(".hamburger-menu").click(function(){
-                $(this).toggleClass("times");
-                $(".main-nav").toggleClass("active");
-            });
-        });
-
         //header scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
@@ -179,23 +171,42 @@
 
         //nav clicked scrool
         $(document).ready(function() {
-        // 選取所有的導航連結
-        $('.main-nav a').click(function(event) {
-            event.preventDefault(); // 阻止預設的連結行為
+            
+            $('body').css('overflow', 'auto');
 
-            // 取得目標區塊的 ID
-            var targetId = $(this).attr('href');
+            //menu
+            $(".hamburger-menu").click(function(){
+                $(this).toggleClass("times");
+                $(".main-nav").toggleClass("active");
+                if ($('body').css('overflow') === 'auto') {
+                    $('body').css('overflow', 'hidden');
+                } else {
+                    $('body').css('overflow', 'auto');
+                }
+            });
 
-            // 滾動到目標區塊
-            $('html, body').animate({
-                scrollTop: $(targetId).offset().top
-            }, 500);
+            // 選取所有的導航連結
+            $('.main-nav a').click(function(event) {
+                event.preventDefault(); // 阻止預設的連結行為
 
-            //關閉menu
-            $(".main-nav").toggleClass("active");
-            $(".hamburger-menu").toggleClass("times");
+                // 取得目標區塊的 ID
+                var targetId = $(this).attr('href');
+
+                // 滾動到目標區塊
+                $('html, body').animate({
+                    scrollTop: $(targetId).offset().top
+                }, 500);
+
+                //關閉menu
+                $(".main-nav").toggleClass("active");
+                $(".hamburger-menu").toggleClass("times");
+            });
+
+            //點擊logo滾動回最上方
+            $('.logo').click(function() {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
         });
-    });
     </script>
 </body>
 </html>
