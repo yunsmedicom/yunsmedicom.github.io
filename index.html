@@ -223,7 +223,7 @@
             }
         });
 
-        //nav clicked scrool
+        //nav clicked scroll
         $(document).ready(function() {
 
             $('body').css('overflow', 'auto');
@@ -231,12 +231,9 @@
             //menu
             $(".hamburger-menu").click(function(){
                 $(this).toggleClass("times");
+                $('body').toggleClass("mbody");
                 $(".main-nav").toggleClass("active");
-                if ($('body').css('overflow') === 'auto') {
-                    $('body').css('overflow', 'hidden');
-                } else {
-                    $('body').css('overflow', 'auto');
-                }
+                $(".mbody").css('overflow', 'hidden');
             });
 
             // 選取所有的導航連結
@@ -254,11 +251,8 @@
                 //關閉menu
                 $(".main-nav").toggleClass("active");
                 $(".hamburger-menu").toggleClass("times");
-                if ($('body').css('overflow') === 'auto') {
-                    $('body').css('overflow', 'hidden');
-                } else {
-                    $('body').css('overflow', 'auto');
-                }
+                $('body').toggleClass("mbody");
+                $('body').css('overflow', 'auto');
             });
 
             //點擊logo滾動回最上方
