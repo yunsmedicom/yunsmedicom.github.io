@@ -506,7 +506,7 @@ section {
     }
   }
 
-  @media (max-width: 820px) and (min-width: 468px){
+  @media (max-width: 820px) {
     .portfolio-item img {
         width: 300px;
         height: 300px;
